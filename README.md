@@ -1,6 +1,8 @@
 # CRUD Web Application
 Live Preview: <a href="https://d26chwpjybvo1s.cloudfront.net/">CRUD Web Application</a>
 
+NOTE: To access the web app, you must first log in using a valid email address, verify the email, and then log in again with the user account you created.
+
 This project is a serverless CRUD web application that allows users to add, edit, delete, and view tasks. It demonstrates the integration of front-end and back-end services using AWS technologies. Below is the architecture of the application:
 
 
