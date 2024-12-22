@@ -37,11 +37,59 @@ Version Control: Git, GitHub
 The project showcases the cloud skills through the CRUD Web Application.
 
 
-## Creating the HTML Website
-### Creating the HTML Website
-I began by creating an HTML website. 
+## Front-end Development
+
+### HTML Creation
+HTML file was created with a simple interface. It includes buttons for Add, Edit, Delete, Read, and Insert Text functionalities.
+
+### JavaScript Functionality
+A JavaScript file was written to handle user interactions and send requests to AWS services. The logic includes methods for POST, PATCH, DELETE, and GET requests, connecting the user interface to back-end APIs.
+
+### GitHub Integration
+The codebase was uploaded to GitHub for version control and collaboration. 
 
 
+## Hosting the Front-end
+
+### Static Website Hosting with S3
+The HTML and JavaScript files were uploaded to an S3 bucket configured for static website hosting.
+
+### Secure Hosting with CloudFront
+AWS CloudFront was configured to serve the content securely with HTTPS. This setup improves performance by caching the content at multiple edge locations globally.
+
+
+## Back-end Development
+
+### Database Configuration
+- A DynamoDB table was created to store tasks. The table includes a primary key (taskid) and attributes like taskName.
+- The database is optimized for scalability and integrated seamlessly with the Lambda functions.
+
+### Lambda Function Development
+- AWS Lambda was used for serverless backend operations. A Python script was written to handle CRUD operations, connecting to DynamoDB and API Gateway.
+- Functions implemented:
+  = POST: Add a new task
+  = GET: Retrieve tasks
+  = PATCH: Edit a task
+  = DELETE: Remove a task
+
+### API Gateway Configuration
+- API Gateway was configured with resources for POST, PATCH, DELETE, and GET methods.
+- CORS was enabled to allow requests from the front-end.
+
+### User Authentication with Cognito
+- AWS Cognito was configured to secure the application. It authenticates users before allowing access to the web app.
+- Users are redirected to a Cognito-hosted login page for authentication.
+
+## Challenges Faced and Solutions
+
+### Configuring CORS in API Gateway
+Solution: Properly configured the Access-Control-Allow-Origin header in API Gateway responses.
+
+### Javascript Functionality and DynamoDB variable naming
+Solution: Manualy Debugging every code using network browser tools. 
+
+### Conclusion
+This CRUD application project was a comprehensive exercise in designing and deploying a scalable and secure web application on AWS. The combination of front-end and back-end services, along with modern serverless technologies, highlights the practical applications of cloud computing in real-world scenarios.
 
 2024 | Orven Casido
 
