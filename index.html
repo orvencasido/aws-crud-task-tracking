@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center">Simple Task Tracker</h1>
+    <div id="taskCount" style="text-align: center;">0 Tasks</div>
+
+    <!-- Task Input Form -->
+    <form id="taskForm" class="mb-4">
+      <div class="form-group">
+        <input type="text" id="taskInput" class="form-control" placeholder="Enter a task" required />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Add Task</button>
+    </form>
+
+    <!-- Task List Display -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Task</th>
+        </tr>
+      </thead>
+      <tbody id="taskList">
+        <!-- Tasks will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+      const cognitoDomain = "INSERT_COGNITO_DOMAIN";
+      const clientId = "INSERT_CLIENT_ID";
+      const redirectUri = "INSERT_WHERE_TO_REDIRECT";
+      const responseType = "code";
+      const scope = "DEFINE_THE_SCOPE_OF_LOGIN";
+    
+      // Check if the URL contains a "code" parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      if (!urlParams.has('code')) {
+        // Redirect to the Cognito-hosted login page
+        window.location.href = `${cognitoDomain}/login?client_id=${clientId}&response_type=${responseType}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(redirectUri)}`;
+      }
+</script> 
+
+  <script src="script.js"></script>
+</body>
+</html>
